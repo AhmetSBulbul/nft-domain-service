@@ -36,11 +36,11 @@ contract Domains is ERC721URIStorage {
         uint len = StringUtils.strlen(domain);
         require(len > 0, "Domain must be at least 1 character");
         if (len == 3) {
-            return 5 * 10 ** 17; // 5 MATIC
+            return 5 * 10 ** 15; // 0.005
         } else if (len == 4) {
-            return 3 * 10**17; // To charge smaller amounts, reduce the decimals. This is 0.3
+            return 3 * 10**15; // To charge smaller amounts, reduce the decimals. This is 0.003
         } else {
-            return 1 * 10**17;
+            return 1 * 10**15;
         }
     }
 

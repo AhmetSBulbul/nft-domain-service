@@ -1,29 +1,33 @@
 const main = async () => {
-    // const [owner, randomPerson] = await hre.ethers.getSigners();
     const domainContractFactory = await hre.ethers.getContractFactory("Domains");
     const domainContract = await domainContractFactory.deploy("bulbul");
     await domainContract.deployed();
+
     console.log("Domain contract deployed to:", domainContract.address);
-    // console.log("Contract deployed by:", owner.address);
 
     let txn = await domainContract.register("ahmets", {value: hre.ethers.utils.parseEther('0.001')});
     await txn.wait();
+    console.log("ahmets.bulbul is owned by:", await domainContract.getOwner("ahmets"));
 
-    const address = await domainContract.getOwner("ahmets");
-    console.log("ahmets is owned by:", address);
+    txn = await domainContract.setRecord("ahmets", "Decentralized!");
+    await txn.wait();
+    console.log("Set record for ahmets.bulbul to:", await domainContract.getRecord("ahmets"));
+
+    const owner = await domainContract.getOwner("ahmets");
+    console.log("ahmets.bulbul is owned by:", owner);
 
     const balance = await hre.ethers.provider.getBalance(domainContract.address);
     console.log("Contract balance:", hre.ethers.utils.formatEther(balance));
-};
+}
 
 const runMain = async () => {
     try {
-        await main();
-        process.exit(0);
+      await main();
+      process.exit(0);
     } catch (error) {
-        console.error(error);
-        process.exit(1);
+      console.log(error);
+      process.exit(1);
     }
-};
-
-runMain();
+  };
+  
+  runMain();
