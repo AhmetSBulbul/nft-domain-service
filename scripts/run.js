@@ -11,6 +11,10 @@ const main = async () => {
 
     const domainOwner = await domainContract.getOwner("test");
     console.log("Domain owner:", domainOwner);
+
+    // Try to set a record with a different owner
+    txn = await domainContract.connect(randomPerson).setRecord("test", "HACKED!");
+    await txn.wait();
 };
 
 const runMain = async () => {
