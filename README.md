@@ -3,9 +3,9 @@
 Simple Smart Contract that registers a domain name and mint an NFT.
 
 
-## See on OpenSea
+<!-- ## See on OpenSea -->
 
-- [Bulbul Name Service V2](https://testnets.opensea.io/collection/bulbul-name-service-v2)
+<!-- - [Bulbul Name Service V2](https://testnets.opensea.io/collection/bulbul-name-service-v2) -->
 
 
 ## See Flutter App
