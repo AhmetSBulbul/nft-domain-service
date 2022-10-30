@@ -1,14 +1,13 @@
-# Sample Hardhat Project
+# NFT Domain Service
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Simple Smart Contract that registers a domain name and mint an NFT.
 
-Try running some of the following tasks:
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
-# nft-domain-service
+## See on OpenSea
+
+- [Bulbul Name Service V2](https://testnets.opensea.io/collection/bulbul-name-service-v2)
+
+
+## See Flutter App
+
+- [NFT Domains App](https://github.com/AhmetSBulbul/nft_domains_dapp)
